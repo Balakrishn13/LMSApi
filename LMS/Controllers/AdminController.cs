@@ -2,17 +2,12 @@
 using LMS.Handler;
 using LMS.Models;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace LMS.Controllers
 {
-
+    [Route("/api/v1.0/lms/company/")]
     [ApiController]
     public class AdminController : ControllerBase
     {
@@ -40,13 +35,27 @@ namespace LMS.Controllers
             }
         }
 
-        [Route("/api/v1.0/lms/company/register")]
+        [Route("register")]
         [HttpPost]
         public ActionResult Registor(Registor registor)
         {
             try
             {
-                return Ok(_adminHandler.Handler(registor));
+                return Ok(_adminHandler.Registor(registor));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message.ToString());
+            }
+        }
+
+        [Route("addcourse")]
+        [HttpPost]
+        public ActionResult addcourse(Registor registor)
+        {
+            try
+            {
+                return Ok(_adminHandler.Registor(registor));
             }
             catch (Exception ex)
             {

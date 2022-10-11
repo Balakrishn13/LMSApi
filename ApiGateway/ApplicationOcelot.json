@@ -1,24 +1,21 @@
 {
   "ReRoutes": [
-
     {
-
-      "DownstreamPathTemplate": "/api/v1.0/market/company/register",
-      "DownstreamScheme": "https",
+      "DownstreamPathTemplate": "/api/v1.0/lms/company/register",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": "5001"
+          "Port": 5001
         }
       ],
+      "UpstreamPathTemplate": "/api/v1.0/lms/company/register",
+      "UpstreamHttpMethod": [ "Post" ]
       //"AuthenticationOptions": {
       //  "AuthenticationProviderKey": "Bearer",
       //  "AllowedScopes": []
       //},
-      "UpstreamPathTemplate": "/api/v1.0/market/company/register",
-      "UpstreamHttpMethod": [ "POST" ],
-      "SwaggerKey": "Company"
-
+      //"FileCacheOptions": { "TtlSeconds": 30 }
     },
     {
 

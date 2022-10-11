@@ -1,16 +1,13 @@
-﻿using LMS.Authentication;
-using LMS.Models;
+﻿using LMS.DAO;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using MongoDB.Driver;
 using MongoDB.Driver.Linq;
 using System;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace LMS.Authentication
 {
@@ -52,11 +49,11 @@ namespace LMS.Authentication
         {
             try
             {
-                MongoClient client = new MongoClient((Configuration.GetValue<string>("LMSDatabase:ConnectionString")));
+                MongoClient client = new MongoClient((Configuration.GetValue<string>("LMSDatabaseSettings:ConnectionString")));
                 MongoServer server = client.GetServer();
-                MongoDatabase database = server.GetDatabase("LMS");
-                MongoCollection usercollection = database.GetCollection<User>("User");
-                User user = usercollection.AsQueryable<User>().Where<User>(sb => sb.Email == email && sb.Password == password).SingleOrDefault();
+                MongoDatabase database = server.GetDatabase("LMSData");
+                MongoCollection usercollection = database.GetCollection<RegistorDAO>("UserData");
+                RegistorDAO user = usercollection.AsQueryable<RegistorDAO>().Where<RegistorDAO>(sb => sb.Email == email && sb.Password == password).SingleOrDefault();
                 if (user != null)
                 {
                     return true;

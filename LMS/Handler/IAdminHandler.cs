@@ -8,6 +8,6 @@ namespace LMS.Handler
 {
    public interface IAdminHandler
     {
-        bool Handler(Registor registor);
+        bool Registor(Registor registor);
     }
 }
