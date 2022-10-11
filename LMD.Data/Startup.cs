@@ -75,7 +75,7 @@ namespace LMD.Data
 
 
             #region Authentication
-            var key = "EStockMarket Authentication";
+            var key = "LMS Authentication";
 
             //services.AddSingleton<IJwtAuthenticationManager>(new JwtAuthenticationManager(key, Configuration));
             services.AddAuthentication(x =>

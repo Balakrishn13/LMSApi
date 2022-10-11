@@ -103,27 +103,5 @@
       //"FileCacheOptions": { "TtlSeconds": 30 }
     }
 
-  ],
-  "SwaggerEndPoints": [
-    {
-      "Key": "Company",
-      "Config": [
-        {
-          "Name": "Comapny API",
-          "Version": "v1",
-          "Url": "https://localhost:5001/swagger/v1/swagger.json"
-        }
-      ]
-    },
-    {
-      "Key": "Stock",
-      "Config": [
-        {
-          "Name": "Stock API",
-          "Version": "v1",
-          "Url": "https://localhost:5002/swagger/v1/swagger.json"
-        }
-      ]
-    }
   ]
 }

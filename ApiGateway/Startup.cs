@@ -55,7 +55,7 @@ namespace ApiGateway
                 app.UseHsts();
             }
 
-            app.UseSwaggerForOcelotUI(Configuration);
+            //app.UseSwaggerForOcelotUI(Configuration);
             app.UseRouting();
             app.UseCors("CorsPolicy");
             app.UseEndpoints(endpoints =>
