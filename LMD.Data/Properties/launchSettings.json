@@ -20,6 +20,7 @@
     "LMD.Data": {
       "commandName": "Project",
       "launchBrowser": true,
+      "launchUrl": "/api/v1.0/lms/courses",
       "applicationUrl": "http://localhost:5002",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"

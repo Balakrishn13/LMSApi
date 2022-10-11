@@ -1,3 +1,5 @@
+using LMD.Data.Handler;
+using LMD.Data.Helper;
 using LMS.Data.DbSettings;
 using LMS.Data.DbSettings.Interface;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -32,22 +34,20 @@ namespace LMD.Data
             services.Configure<LMSDatabaseSettings>(Configuration.GetSection(nameof(LMSDatabaseSettings)));
             services.AddSingleton<ILMSDatabaseSettings>(sp => sp.GetRequiredService<IOptions<LMSDatabaseSettings>>().Value);
             services.AddSingleton<IMongoClient>(s => new MongoClient(Configuration.GetValue<string>("LMSDatabaseSettings:ConnectionString")));
-
             services.AddCors(c =>
             {
                 c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
             });
-            services.AddControllers();
+            services.AddScoped<IUserHandler, UserHandler>();
+            services.AddScoped<IUserHelper, UserHelper>();
 
-            //services.AddScoped<IAdminHandler, AdminHandler>();
-            //services.AddScoped<IAdminHelper, AdminHelper>();
             #region swggger
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
                 {
-                    Title = "Swagger Company Services API",
-                    Description = "Swagger Company Services API",
+                    Title = "Swagger Stock Services API",
+                    Description = "Swagger Stock Services API",
                     Version = "v1"
                 });
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
@@ -72,10 +72,12 @@ namespace LMD.Data
   });
             });
             #endregion  swagger
-            #region Authentication
-            var key = "LMS Authentication";
 
-            
+
+            #region Authentication
+            var key = "EStockMarket Authentication";
+
+            //services.AddSingleton<IJwtAuthenticationManager>(new JwtAuthenticationManager(key, Configuration));
             services.AddAuthentication(x =>
             {
                 x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -108,7 +110,6 @@ namespace LMD.Data
             app.UseRouting();
 
             app.UseAuthorization();
-
             app.UseSwagger();
             app.UseSwaggerUI(options =>
             {
@@ -119,12 +120,11 @@ namespace LMD.Data
             {
                 endpoints.MapControllers();
             });
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapGet("/", async context =>
                 {
-                    await context.Response.WriteAsync("Hello World from Company services");
+                    await context.Response.WriteAsync("Hello World from stock services");
                 });
             });
         }

@@ -24,17 +24,21 @@ namespace LMD.Data.Helper
         {
             try
             {
-                if (!string.IsNullOrEmpty(course.Technology) && !string.IsNullOrEmpty(course.Startdate.ToString()) && !string.IsNullOrEmpty(course.Enddate.ToString()))
+                if (!string.IsNullOrEmpty(course.Technology) && !string.IsNullOrEmpty(course.Startdate) && !string.IsNullOrEmpty(course.Enddate))
                 {
-                    return _coruseDAO.Find(x => x.Technology == course.Technology && x.CourseStartDate >= course.Startdate && x.CourseEndDate <= course.Enddate && x.IsDelete == 1).ToList();
+                    return _coruseDAO.Find(x => x.Technology == course.Technology && x.CourseStartDate >=Convert.ToDateTime(course.Startdate) && x.CourseEndDate <= Convert.ToDateTime(course.Enddate) && x.IsDelete == 1).ToList();
+                }
+                else if (!string.IsNullOrEmpty(course.Technology) && string.IsNullOrEmpty(course.Startdate) && string.IsNullOrEmpty(course.Enddate))
+                {
+                    return _coruseDAO.Find(x => x.Technology == course.Technology && x.IsDelete == 1).ToList();
                 }
                 else if (!string.IsNullOrEmpty(course.Technology) && !string.IsNullOrEmpty(course.Startdate.ToString()) && string.IsNullOrEmpty(course.Enddate.ToString()))
                 {
-                    return _coruseDAO.Find(x => x.Technology == course.Technology && x.CourseStartDate >= course.Startdate && x.IsDelete == 1).ToList();
+                    return _coruseDAO.Find(x => x.Technology == course.Technology && x.CourseStartDate >= Convert.ToDateTime(course.Startdate) && x.IsDelete == 1).ToList();
                 }
                 else if (!string.IsNullOrEmpty(course.Technology) && string.IsNullOrEmpty(course.Startdate.ToString()) && !string.IsNullOrEmpty(course.Enddate.ToString()))
                 {
-                    return _coruseDAO.Find(x => x.Technology == course.Technology && x.CourseEndDate <= course.Enddate && x.IsDelete == 1).ToList();
+                    return _coruseDAO.Find(x => x.Technology == course.Technology && x.CourseEndDate <= Convert.ToDateTime(course.Enddate) && x.IsDelete == 1).ToList();
                 }
                 else
                 {

@@ -28,6 +28,6 @@ namespace LMD.Data.Controllers
             {
                 return BadRequest(ex.Message.ToString());
             }
-        }
+        }        
     }
 }

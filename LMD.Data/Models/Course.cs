@@ -6,8 +6,8 @@ namespace LMD.Data.Models
     {
         public string Technology { get; set; }
 
-        public DateTime Startdate { get; set; }
+        public string Startdate { get; set; }
 
-        public DateTime Enddate { get; set; }
+        public string Enddate { get; set; }
     }
 }
