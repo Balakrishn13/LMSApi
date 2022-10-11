@@ -3,7 +3,7 @@ using MongoDB.Bson.Serialization.Attributes;
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace LMS.DAO
+namespace LMS.Data.DAO
 {
     public class CourseDAO
     {

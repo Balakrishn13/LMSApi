@@ -7,7 +7,7 @@ using System;
 
 namespace LMS.Controllers
 {
-    [Route("/api/v1.0/lms/company/")]
+    [Route("/api/v1.0/lms/")]
     [ApiController]
     public class AdminController : ControllerBase
     {
@@ -35,7 +35,7 @@ namespace LMS.Controllers
             }
         }
 
-        [Route("register")]
+        [Route("company/register")]
         [HttpPost]
         public ActionResult Registor(Registor registor)
         {
@@ -49,7 +49,7 @@ namespace LMS.Controllers
             }
         }
 
-        [Route("addcourse")]
+        [Route("courses/addcourse")]
         [HttpPost]
         public ActionResult AddCourse(AddCourse addCourse)
         {
@@ -63,7 +63,7 @@ namespace LMS.Controllers
             }
         }
 
-        [Route("delete")]
+        [Route("courses/delete")]
         [HttpDelete]
         public ActionResult CourseDelete(string courseId)
         {
@@ -77,7 +77,7 @@ namespace LMS.Controllers
             }
         }
 
-        [Route("activate")]
+        [Route("courses/activate")]
         [HttpGet]
         public ActionResult CourseActivate(string courseId)
         {
@@ -91,7 +91,7 @@ namespace LMS.Controllers
             }
         }
 
-        [Route("getCourse")]
+        [Route("courses/getCourse")]
         [HttpGet]
         public ActionResult GetCourse(string isActive)
         {

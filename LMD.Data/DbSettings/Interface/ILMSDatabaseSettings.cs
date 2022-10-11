@@ -1,4 +1,4 @@
-﻿namespace LMS.DbSettings.Interface
+﻿namespace LMS.Data.DbSettings.Interface
 {
     public interface ILMSDatabaseSettings
     {

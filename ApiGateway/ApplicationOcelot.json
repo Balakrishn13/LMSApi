@@ -18,7 +18,7 @@
       //"FileCacheOptions": { "TtlSeconds": 30 }
     },
     {
-      "DownstreamPathTemplate": "/api/v1.0/lms/company/addcourse",
+      "DownstreamPathTemplate": "/api/v1.0/lms/courses/addcourse",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -26,7 +26,7 @@
           "Port": 5001
         }
       ],
-      "UpstreamPathTemplate": "/api/v1.0/lms/company/addcourse",
+      "UpstreamPathTemplate": "/api/v1.0/lms/courses/addcourse",
       "UpstreamHttpMethod": [ "Post" ]
       //"AuthenticationOptions": {
       //  "AuthenticationProviderKey": "Bearer",
@@ -35,7 +35,7 @@
       //"FileCacheOptions": { "TtlSeconds": 30 }
     },
     {
-      "DownstreamPathTemplate": "/api/v1.0/lms/company/delete",
+      "DownstreamPathTemplate": "/api/v1.0/lms/courses/delete",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -43,7 +43,7 @@
           "Port": 5001
         }
       ],
-      "UpstreamPathTemplate": "/api/v1.0/lms/company/delete",
+      "UpstreamPathTemplate": "/api/v1.0/lms/courses/delete",
       "UpstreamHttpMethod": [ "Delete" ]
       //"AuthenticationOptions": {
       //  "AuthenticationProviderKey": "Bearer",
@@ -52,7 +52,7 @@
       //"FileCacheOptions": { "TtlSeconds": 30 }
     },
     {
-      "DownstreamPathTemplate": "/api/v1.0/lms/company/getCourse",
+      "DownstreamPathTemplate": "/api/v1.0/lms/courses/getCourse",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -60,7 +60,7 @@
           "Port": 5001
         }
       ],
-      "UpstreamPathTemplate": "/api/v1.0/lms/company/getCourse",
+      "UpstreamPathTemplate": "/api/v1.0/lms/courses/getCourse",
       "UpstreamHttpMethod": [ "Get" ]
       //"AuthenticationOptions": {
       //  "AuthenticationProviderKey": "Bearer",
@@ -69,7 +69,7 @@
       //"FileCacheOptions": { "TtlSeconds": 30 }
     },
     {
-      "DownstreamPathTemplate": "/api/v1.0/lms/company/activate",
+      "DownstreamPathTemplate": "/api/v1.0/lms/courses/activate",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -77,8 +77,25 @@
           "Port": 5001
         }
       ],
-      "UpstreamPathTemplate": "/api/v1.0/lms/company/activate",
+      "UpstreamPathTemplate": "/api/v1.0/lms/courses/activate",
       "UpstreamHttpMethod": [ "Get" ]
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer",
+      //  "AllowedScopes": []
+      //},
+      //"FileCacheOptions": { "TtlSeconds": 30 }
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1.0/lms/courses/info/get",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5002
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v1.0/lms/courses/info/get",
+      "UpstreamHttpMethod": [ "Post" ]
       //"AuthenticationOptions": {
       //  "AuthenticationProviderKey": "Bearer",
       //  "AllowedScopes": []
