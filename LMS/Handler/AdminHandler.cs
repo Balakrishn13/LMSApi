@@ -1,6 +1,7 @@
-﻿using LMS.Helper;
+﻿using LMS.DAO;
+using LMS.Helper;
 using LMS.Models;
-
+using System.Collections.Generic;
 
 namespace LMS.Handler
 {
@@ -17,6 +18,26 @@ namespace LMS.Handler
         public bool Registor(Registor registor)
         {
             return _adminHelper.Registor(registor);
+        }
+
+        public bool AddCourse(AddCourse addCourse)
+        {
+            return _adminHelper.AddCourse(addCourse);
+        }
+
+        public bool DeleteCourse(string courseId)
+        {
+            return _adminHelper.DeleteCourse(courseId);
+        }
+
+        public List<CourseDAO> GetAllCourse(string isActive)
+        {
+            return _adminHelper.GetAllCourse(isActive);
+        }
+
+        public bool Activate(string courseId)
+        {
+            return _adminHelper.Activate(courseId);
         }
     }
 }

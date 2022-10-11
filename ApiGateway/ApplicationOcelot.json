@@ -18,156 +18,72 @@
       //"FileCacheOptions": { "TtlSeconds": 30 }
     },
     {
-
-      "DownstreamPathTemplate": "/api/v1.0/market/company/info",
+      "DownstreamPathTemplate": "/api/v1.0/lms/company/addcourse",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": "5001"
+          "Port": 5001
         }
       ],
+      "UpstreamPathTemplate": "/api/v1.0/lms/company/addcourse",
+      "UpstreamHttpMethod": [ "Post" ]
       //"AuthenticationOptions": {
       //  "AuthenticationProviderKey": "Bearer",
       //  "AllowedScopes": []
       //},
-      "UpstreamPathTemplate": "/api/v1.0/market/company/info",
-      "UpstreamHttpMethod": [ "GET", "POST" ],
-      "SwaggerKey": "Company"
-
+      //"FileCacheOptions": { "TtlSeconds": 30 }
     },
     {
-
-      "DownstreamPathTemplate": "/api/v1.0/market/company/getall",
-      "DownstreamScheme": "https",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": "5001"
-        }
-      ],
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "Bearer",
-      //  "AllowedScopes": []
-      //},
-      "UpstreamPathTemplate": "/api/v1.0/market/company/getall",
-      "UpstreamHttpMethod": [ "GET", "POST" ],
-      "SwaggerKey": "Company"
-
-    },
-    {
-
-      "DownstreamPathTemplate": "/api/v1.0/market/company/delete",
+      "DownstreamPathTemplate": "/api/v1.0/lms/company/delete",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": "5001"
+          "Port": 5001
         }
       ],
+      "UpstreamPathTemplate": "/api/v1.0/lms/company/delete",
+      "UpstreamHttpMethod": [ "Delete" ]
       //"AuthenticationOptions": {
       //  "AuthenticationProviderKey": "Bearer",
       //  "AllowedScopes": []
       //},
-      "UpstreamPathTemplate": "/api/v1.0/market/company/delete",
-      "UpstreamHttpMethod": [ "GET", "POST" ],
-      "SwaggerKey": "Company"
-
+      //"FileCacheOptions": { "TtlSeconds": 30 }
     },
     {
-
-      "DownstreamPathTemplate": "/api/v1.0/market/company/adduser",
+      "DownstreamPathTemplate": "/api/v1.0/lms/company/getCourse",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": "5001"
+          "Port": 5001
         }
       ],
+      "UpstreamPathTemplate": "/api/v1.0/lms/company/getCourse",
+      "UpstreamHttpMethod": [ "Get" ]
       //"AuthenticationOptions": {
       //  "AuthenticationProviderKey": "Bearer",
       //  "AllowedScopes": []
       //},
-      "UpstreamPathTemplate": "/api/v1.0/market/company/adduser",
-      "UpstreamHttpMethod": [ "POST" ],
-      "SwaggerKey": "Company"
-
+      //"FileCacheOptions": { "TtlSeconds": 30 }
     },
     {
-
-      "DownstreamPathTemplate": "/api/v1.0/market/company/authenticate",
+      "DownstreamPathTemplate": "/api/v1.0/lms/company/activate",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": "5001"
+          "Port": 5001
         }
       ],
+      "UpstreamPathTemplate": "/api/v1.0/lms/company/activate",
+      "UpstreamHttpMethod": [ "Get" ]
       //"AuthenticationOptions": {
       //  "AuthenticationProviderKey": "Bearer",
       //  "AllowedScopes": []
       //},
-      "UpstreamPathTemplate": "/api/v1.0/market/company/authenticate",
-      "UpstreamHttpMethod": [ "POST" ],
-      "SwaggerKey": "Company"
-
-    },
-    {
-
-      "DownstreamPathTemplate": "/api/v1.0/market/stock/get",
-      "DownstreamScheme": "https",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": "5002"
-        }
-      ],
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "Bearer",
-      //  "AllowedScopes": []
-      //},
-      "UpstreamPathTemplate": "/api/v1.0/market/stock/get",
-      "UpstreamHttpMethod": [ "GET", "POST" ],
-      "SwaggerKey": "Stock"
-
-    },
-    {
-
-      "DownstreamPathTemplate": "/api/v1.0/market/stock/delete",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": "5002"
-        }
-      ],
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "Bearer",
-      //  "AllowedScopes": []
-      //},
-      "UpstreamPathTemplate": "/api/v1.0/market/stock/delete",
-      "UpstreamHttpMethod": [ "GET", "POST" ],
-      "SwaggerKey": "Stock"
-
-    },
-    {
-
-      "DownstreamPathTemplate": "/api/v1.0/market/stock/add",
-      "DownstreamScheme": "https",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": "5002"
-        }
-      ],
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "Bearer",
-      //  "AllowedScopes": []
-      //},
-      "UpstreamPathTemplate": "/api/v1.0/market/stock/add",
-      "UpstreamHttpMethod": [ "POST" ],
-      "SwaggerKey": "Stock"
-
+      //"FileCacheOptions": { "TtlSeconds": 30 }
     }
 
   ],

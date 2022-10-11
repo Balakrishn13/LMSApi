@@ -51,11 +51,53 @@ namespace LMS.Controllers
 
         [Route("addcourse")]
         [HttpPost]
-        public ActionResult addcourse(Registor registor)
+        public ActionResult AddCourse(AddCourse addCourse)
         {
             try
             {
-                return Ok(_adminHandler.Registor(registor));
+                return Ok(_adminHandler.AddCourse(addCourse));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message.ToString());
+            }
+        }
+
+        [Route("delete")]
+        [HttpDelete]
+        public ActionResult CourseDelete(string courseId)
+        {
+            try
+            {
+                return Ok(_adminHandler.DeleteCourse(courseId));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message.ToString());
+            }
+        }
+
+        [Route("activate")]
+        [HttpGet]
+        public ActionResult CourseActivate(string courseId)
+        {
+            try
+            {
+                return Ok(_adminHandler.Activate(courseId));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message.ToString());
+            }
+        }
+
+        [Route("getCourse")]
+        [HttpGet]
+        public ActionResult GetCourse(string isActive)
+        {
+            try
+            {
+                return Ok(_adminHandler.GetAllCourse(isActive));
             }
             catch (Exception ex)
             {
