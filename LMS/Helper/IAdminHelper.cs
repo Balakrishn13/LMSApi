@@ -15,5 +15,7 @@ namespace LMS.Helper
         bool Activate(string courseId);
 
         List<CourseDAO> GetAllCourse(string isActive);
+
+        List<RegistorDAO> GetUser(Login login);
     }
 }

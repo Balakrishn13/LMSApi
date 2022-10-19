@@ -1,5 +1,6 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace LMS.DAO
@@ -19,6 +20,8 @@ namespace LMS.DAO
         [Required]
         public string Password { get; set; }
 
-        public BsonDateTime bsonDateTime { get; set; }
+        public DateTime bsonDateTime { get; set; }
+
+        public int IsActive { get; set; }
     }
 }

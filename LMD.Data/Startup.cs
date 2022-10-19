@@ -109,6 +109,7 @@ namespace LMD.Data
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
             app.UseSwagger();
             app.UseSwaggerUI(options =>

@@ -18,6 +18,23 @@
       //"FileCacheOptions": { "TtlSeconds": 30 }
     },
     {
+      "DownstreamPathTemplate": "/api/v1.0/lms/company/login",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5001
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v1.0/lms/company/login",
+      "UpstreamHttpMethod": [ "Post" ]
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer",
+      //  "AllowedScopes": []
+      //},
+      //"FileCacheOptions": { "TtlSeconds": 30 }
+    },
+    {
       "DownstreamPathTemplate": "/api/v1.0/lms/courses/addcourse",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [

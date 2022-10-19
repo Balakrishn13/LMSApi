@@ -35,6 +35,11 @@ namespace LMS.Handler
             return _adminHelper.GetAllCourse(isActive);
         }
 
+        public List<RegistorDAO> GetUser(Login login)
+        {
+            return _adminHelper.GetUser(login);
+        }
+
         public bool Activate(string courseId)
         {
             return _adminHelper.Activate(courseId);

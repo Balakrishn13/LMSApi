@@ -7,6 +7,7 @@ using System;
 
 namespace LMS.Controllers
 {
+    [Authorize]
     [Route("/api/v1.0/lms/")]
     [ApiController]
     public class AdminController : ControllerBase
@@ -35,6 +36,7 @@ namespace LMS.Controllers
             }
         }
 
+        [AllowAnonymous]
         [Route("company/register")]
         [HttpPost]
         public ActionResult Registor(Registor registor)
@@ -42,6 +44,21 @@ namespace LMS.Controllers
             try
             {
                 return Ok(_adminHandler.Registor(registor));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message.ToString());
+            }
+        }
+
+        [AllowAnonymous]
+        [Route("company/login")]
+        [HttpPost]
+        public ActionResult Login(Login login)
+        {
+            try
+            {
+                return Ok(_adminHandler.GetUser(login));
             }
             catch (Exception ex)
             {

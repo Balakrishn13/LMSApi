@@ -1,10 +1,12 @@
 ﻿using LMD.Data.Handler;
 using LMD.Data.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 
 namespace LMD.Data.Controllers
 {
+    [Authorize]
     [Route("/api/v1.0/lms/courses/")]
     [ApiController]
     public class UserController : ControllerBase

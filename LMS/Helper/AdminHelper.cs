@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace LMS.Helper
 {
-    public class AdminHelper: IAdminHelper
+    public class AdminHelper : IAdminHelper
     {
         private readonly IMongoCollection<RegistorDAO> _registorDAO;
 
@@ -19,7 +19,7 @@ namespace LMS.Helper
             var database = mongoClient.GetDatabase(settings.DatabaseName);
             _registorDAO = database.GetCollection<RegistorDAO>(settings.LMSCollectionName);
             _addCoruseDAO = database.GetCollection<CourseDAO>(settings.LMSCourse);
-         
+
         }
 
 
@@ -27,12 +27,13 @@ namespace LMS.Helper
         {
             try
             {
-                RegistorDAO registorDAO  = new RegistorDAO();
+                RegistorDAO registorDAO = new RegistorDAO();
                 registorDAO.Name = registor.Name;
                 registorDAO.Email = registor.Email;
                 registorDAO.Role = "User";
                 registorDAO.Password = registor.Password;
                 registorDAO.bsonDateTime = registor.DateTime;
+                registorDAO.IsActive = 1;
                 _registorDAO.InsertOne(registorDAO);
                 return true;
             }
@@ -113,6 +114,19 @@ namespace LMS.Helper
                     return courseDAOs;
                 }
 
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+        public List<RegistorDAO> GetUser(Login login)
+        {
+            try
+            {
+                return _registorDAO.Find(x => x.Email == login.Email && x.Password == login.Password && x.IsActive==1).ToList();
             }
             catch (Exception ex)
             {
