@@ -15,8 +15,8 @@ namespace LMD.Data.Helper
 
         public UserHelper(ILMSDatabaseSettings settings, IMongoClient mongoClient)
         {
-            var database = mongoClient.GetDatabase(settings.DatabaseName);
-            _coruseDAO = database.GetCollection<CourseDAO>(settings.LMSCourse);
+            var database = mongoClient.GetDatabase("LMSData");
+            _coruseDAO = database.GetCollection<CourseDAO>("CourseData");
 
         }
 

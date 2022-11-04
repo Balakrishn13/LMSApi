@@ -33,7 +33,7 @@ namespace LMD.Data
             services.AddCors();
             services.Configure<LMSDatabaseSettings>(Configuration.GetSection(nameof(LMSDatabaseSettings)));
             services.AddSingleton<ILMSDatabaseSettings>(sp => sp.GetRequiredService<IOptions<LMSDatabaseSettings>>().Value);
-            services.AddSingleton<IMongoClient>(s => new MongoClient(Configuration.GetValue<string>("LMSDatabaseSettings:ConnectionString")));
+            services.AddSingleton<IMongoClient>(s => new MongoClient(Configuration.GetValue<string>("LMSDatabaseSettings")));
             services.AddCors(c =>
             {
                 c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());

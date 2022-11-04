@@ -17,5 +17,7 @@ namespace LMS.Helper
         List<CourseDAO> GetAllCourse(string isActive);
 
         List<RegistorDAO> GetUser(Login login);
+
+        
     }
 }

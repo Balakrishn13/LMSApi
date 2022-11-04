@@ -1,6 +1,18 @@
 {
   "ReRoutes": [
     {
+      "DownstreamPathTemplate": "/api/v1.0/lms/authenticate",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5001
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v1.0/lms/authenticate",
+      "UpstreamHttpMethod": [ "Post" ]
+    }
+    ,{
       "DownstreamPathTemplate": "/api/v1.0/lms/company/register",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -11,11 +23,6 @@
       ],
       "UpstreamPathTemplate": "/api/v1.0/lms/company/register",
       "UpstreamHttpMethod": [ "Post" ]
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "Bearer",
-      //  "AllowedScopes": []
-      //},
-      //"FileCacheOptions": { "TtlSeconds": 30 }
     },
     {
       "DownstreamPathTemplate": "/api/v1.0/lms/company/login",
@@ -28,11 +35,6 @@
       ],
       "UpstreamPathTemplate": "/api/v1.0/lms/company/login",
       "UpstreamHttpMethod": [ "Post" ]
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "Bearer",
-      //  "AllowedScopes": []
-      //},
-      //"FileCacheOptions": { "TtlSeconds": 30 }
     },
     {
       "DownstreamPathTemplate": "/api/v1.0/lms/courses/addcourse",
@@ -45,11 +47,6 @@
       ],
       "UpstreamPathTemplate": "/api/v1.0/lms/courses/addcourse",
       "UpstreamHttpMethod": [ "Post" ]
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "Bearer",
-      //  "AllowedScopes": []
-      //},
-      //"FileCacheOptions": { "TtlSeconds": 30 }
     },
     {
       "DownstreamPathTemplate": "/api/v1.0/lms/courses/delete",
@@ -62,11 +59,6 @@
       ],
       "UpstreamPathTemplate": "/api/v1.0/lms/courses/delete",
       "UpstreamHttpMethod": [ "Delete" ]
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "Bearer",
-      //  "AllowedScopes": []
-      //},
-      //"FileCacheOptions": { "TtlSeconds": 30 }
     },
     {
       "DownstreamPathTemplate": "/api/v1.0/lms/courses/getCourse",
@@ -79,11 +71,6 @@
       ],
       "UpstreamPathTemplate": "/api/v1.0/lms/courses/getCourse",
       "UpstreamHttpMethod": [ "Get" ]
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "Bearer",
-      //  "AllowedScopes": []
-      //},
-      //"FileCacheOptions": { "TtlSeconds": 30 }
     },
     {
       "DownstreamPathTemplate": "/api/v1.0/lms/courses/activate",
@@ -96,11 +83,6 @@
       ],
       "UpstreamPathTemplate": "/api/v1.0/lms/courses/activate",
       "UpstreamHttpMethod": [ "Get" ]
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "Bearer",
-      //  "AllowedScopes": []
-      //},
-      //"FileCacheOptions": { "TtlSeconds": 30 }
     },
     {
       "DownstreamPathTemplate": "/api/v1.0/lms/courses/info/get",
@@ -113,11 +95,6 @@
       ],
       "UpstreamPathTemplate": "/api/v1.0/lms/courses/info/get",
       "UpstreamHttpMethod": [ "Post" ]
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "Bearer",
-      //  "AllowedScopes": []
-      //},
-      //"FileCacheOptions": { "TtlSeconds": 30 }
     }
 
   ]

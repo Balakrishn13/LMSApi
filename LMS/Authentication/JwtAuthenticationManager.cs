@@ -49,7 +49,7 @@ namespace LMS.Authentication
         {
             try
             {
-                MongoClient client = new MongoClient((Configuration.GetValue<string>("LMSDatabaseSettings:ConnectionString")));
+                MongoClient client = new MongoClient((Configuration.GetValue<string>("LMSDatabaseSettings")));
                 MongoServer server = client.GetServer();
                 MongoDatabase database = server.GetDatabase("LMSData");
                 MongoCollection usercollection = database.GetCollection<RegistorDAO>("UserData");

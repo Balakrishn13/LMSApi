@@ -16,9 +16,9 @@ namespace LMS.Helper
 
         public AdminHelper(ILMSDatabaseSettings settings, IMongoClient mongoClient)
         {
-            var database = mongoClient.GetDatabase(settings.DatabaseName);
-            _registorDAO = database.GetCollection<RegistorDAO>(settings.LMSCollectionName);
-            _addCoruseDAO = database.GetCollection<CourseDAO>(settings.LMSCourse);
+            var database = mongoClient.GetDatabase("LMSData");
+            _registorDAO = database.GetCollection<RegistorDAO>("UserData");
+            _addCoruseDAO = database.GetCollection<CourseDAO>("CourseData");
 
         }
 
@@ -126,13 +126,13 @@ namespace LMS.Helper
         {
             try
             {
-                return _registorDAO.Find(x => x.Email == login.Email && x.Password == login.Password && x.IsActive==1).ToList();
+                return _registorDAO.Find(x => x.Email == login.Email && x.Password == login.Password && x.IsActive == 1).ToList();
             }
             catch (Exception ex)
             {
                 throw ex;
             }
 
-        }
+        }       
     }
 }
